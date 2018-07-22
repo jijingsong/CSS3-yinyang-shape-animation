@@ -1,0 +1,31 @@
+.parent{
+    width: 160px;
+    height: 80px;
+    border: 1px solid red;
+    background: #eee;
+    border-radius: 100%;
+    border-width: 1px 1px 80px 1px;
+    position: relative;
+  }
+  .parent::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: #eee;
+    border: 32px solid red;
+  }
+  .parent::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: red;
+    border: 32px solid #eee;
+  }

@@ -1,31 +1,42 @@
-.parent{
-    width: 160px;
-    height: 80px;
-    border: 1px solid red;
-    background: #eee;
-    border-radius: 100%;
-    border-width: 1px 1px 80px 1px;
-    position: relative;
+body {
+  background-color: #ddd;
+}
+.parent {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #ffffff 0%,#ffffff 50%,#000000 50%,#000000 100%);
+  position: relative;
+  animation: spin 2s linear infinite;
+}
+.parent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 40px solid #000;
+}
+.parent::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #000;
+  border: 40px solid #fff;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  .parent::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 16px;
-    height: 16px;
-    border-radius: 100%;
-    background-color: #eee;
-    border: 32px solid red;
+  
+  to {
+    transform: rotate(360deg);
   }
-  .parent::after{
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 16px;
-    height: 16px;
-    border-radius: 100%;
-    background-color: red;
-    border: 32px solid #eee;
-  }
+}
